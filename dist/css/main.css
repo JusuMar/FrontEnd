@@ -1,0 +1,7 @@
+/*To whoever is reading, writing comments helps me understand what I am doing. Some of them will seem stupid but writing things down just makes sense in my head*/
+/*$creating variables*/
+/*Connecting the actual css file not the sass to html*/
+/*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
+body {
+  background: #444;
+  color: #fff; }
