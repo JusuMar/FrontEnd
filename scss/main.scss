@@ -3,7 +3,8 @@
 $primary-color: #444;
 /*Connecting the actual css file not the sass to html*/
 /*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
-* { /* make it so that if we have padding on the inside it's not gonna affect the hight or width of it, within the box moddle*/
+/* make it so that if we have padding on the inside it's not gonna affect the hight or width of it, within the box moddle*/
+* { 
     box-sizing: border-box;
 }
 
@@ -18,15 +19,22 @@ body {
 }
 
 // Headings
+/*nesting
+    & same as h1.lg-heading*/
+    /*multiplier of the html tag font size. <html> default size is 16px */
 h1,
 h2,
 h3 {
     margin: 0;
     font-weight: 400;
-    /*nesting
-    & same as h1.lg-heading*/
-    &.lg-heading {
-        font-size: 6rem; /*multiplier of the html tag font size. <html> default size is 16px */
 
+    &.lg-heading {
+        font-size: 6rem; 
+    }
+    
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: lighten($primary-color 2);
     }
 }
