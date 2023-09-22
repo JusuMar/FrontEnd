@@ -1,6 +1,73 @@
-$primary-color: #444;
+/*To whoever is reading, writing comments helps me understand what I am doing. Some of them will seem stupid but writing things down just makes sense in my head*/
 
+/*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
+@import 'config';
 body {
+    @include background;
     background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+// Headings
+/*nesting & same as h1.lg-heading*/
+/*multiplier of the html tag font size. <html> default size is 16px */
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 400;
+
+&.lg-heading {
+    font-size: 6rem;
+}
+
+&.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+}
+}
+
+a {
     color: #fff;
+    text-decoration: none;
+}
+
+header {
+    position: fixed; /*Everything pushed under it*/
+    z-index: 2; /* All elements are aware of the space taken by others. The z-index attribute lets you adjust the order of the layering of objects when rendering content.*/
+    width: 100%;
+}   
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main { /* All around padding*/
+    padding: 4rem;
+    height: 100%;
+
+    .icons { 
+        margin-top: 1rem ;
+
+        a {
+            padding: 0.4rem;
+             
+            &:hover {
+                color: $secondary-color;
+                @include easeOut(); /*Adding a mixin using @include*/
+                
+            }
+        }
+    }
+    &#home {
+        overflow: hidden; /*Scroll bar always hidden*/
+        h1 {
+            margin-top: 20vh;  /* vh is a unit to specify hight, like slices going sideways or vw slices going up and down.*/
+        }
+    }
 }
