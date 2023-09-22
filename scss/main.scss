@@ -1,40 +1,6 @@
-/*To whoever is reading, writing comments helps me understand what I am doing. Some of them will seem stupid but writing things down just makes sense in my head*/
-/*$creating variables*/
 $primary-color: #444;
-/*Connecting the actual css file not the sass to html*/
-/*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
-/* make it so that if we have padding on the inside it's not gonna affect the hight or width of it, within the box moddle*/
-* { 
-    box-sizing: border-box;
-}
 
-
-body { 
+body {
     background: $primary-color;
     color: #fff;
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-}
-
-// Headings
-/*nesting
-    & same as h1.lg-heading*/
-    /*multiplier of the html tag font size. <html> default size is 16px */
-h1,
-h2,
-h3 {
-    margin: 0;
-    font-weight: 400;
-
-    &.lg-heading {
-        font-size: 6rem; 
-    }
-    
-    &.sm-heading {
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: lighten($primary-color 2);
-    }
 }
