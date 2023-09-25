@@ -3,10 +3,15 @@
 /*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
 @import 'config';
 @import 'menu';
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     @include background;
     background: $primary-color;
-    color: set-text-color($primary-color);
+    /*color: set-text-color($primary-color);*/
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,6 +26,7 @@ h2,
 h3 {
     margin: 0;
     font-weight: 400;
+    color: #fff;
 
 &.lg-heading {
     font-size: 6rem;

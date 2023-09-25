@@ -19,11 +19,22 @@
     /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
     Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
 
 /*ctrl c to stop npm run sass to restart*/
+* {
+  box-sizing: border-box; }
+
 body {
   background: #444;
-  color: set-text-color(#444);
+  /*color: set-text-color($primary-color);*/
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -50,7 +61,8 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #fff; }
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
