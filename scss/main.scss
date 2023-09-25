@@ -3,6 +3,7 @@
 /*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 * {
     box-sizing: border-box;

@@ -1,14 +1,14 @@
 /*To whoever is reading, writing comments helps me understand what I am doing. Some of them will seem stupid but writing things down just makes sense in my head*/
 /*background is now whatever color was assigned to the variable $primary-color, why not just use css or bootstrap?*/
 /*$creating variables*/
+/* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
+    Can be used at anytime using @include.  */
 .menu-btn {
   position: absolute;
   z-index: 3;
   right: 35px;
   top: 35px;
   cursor: pointer;
-  /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
@@ -16,8 +16,6 @@
     margin: 0 0 5px 0;
     /*top, right, bottom, left same as in padding. */
     background: #fff;
-    /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -51,16 +49,12 @@
     background: #373737;
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #444;
     transform: translate3d(0, 100%, 0);
-    /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
@@ -72,8 +66,6 @@
       border: solid 3px #eece1a; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
@@ -89,8 +81,6 @@
     font-weight: 300;
     color: #fff;
     text-decoration: none;
-    /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       color: #eece1a; }
@@ -109,6 +99,35 @@
   transition-delay: 0.4s; }
 
 /*ctrl c to stop npm run sass to restart*/
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url(../img/portrait_small.jpg);
+      width: 150px;
+      height: 150px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
 * {
   box-sizing: border-box; }
 
@@ -178,8 +197,6 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #eece1a;
-        /* Bacically variables for effects and style rules. Avoids always adding things like float-left all the time.
-    Can be used at anytime using @include.  */
         transition: all 0.5s ease-out;
         /*Adding a mixin using @include*/ }
   main#home {
