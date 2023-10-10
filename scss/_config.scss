@@ -17,6 +17,7 @@ $background-opacity:0.9;
            background: $home-image;
            background-attachment: fixed;
            background-size: cover;
+
                /*.overlay*/
                &:after{ /*pseudo-element(return to documentation)*/
                content: '';
@@ -32,10 +33,13 @@ $background-opacity:0.9;
    }
 }
 
-// Set Text Color
-
+// Set Text Color 
 @function set-text-color($color) {
-    
+    @if (lightness($color) > 40) {
+    @return #000;
+}   @else {
+    @return #fff;
+}
 }
 
 
